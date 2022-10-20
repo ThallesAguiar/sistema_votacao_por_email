@@ -1,0 +1,75 @@
+{
+    "empresa": {
+        "id": 1,
+        "nome": "EMPRESA NOME",
+        "nome_completo": "",
+        "cnpj": "",
+        "endereco": "",
+        "nome_comissao": "",
+        "edital": "",
+        "eleicao": "",
+        "dominio":"@email.com",
+        "membros_comissao": {
+            "Presidente": {
+                "nome": "",
+                "email": "usuario@email.com",
+                "senha": "",
+                "permissao": 1,
+                "periodo": 8
+            },
+            "Vice-Presidente": {
+                "nome": "",
+                "email": "usuario@email.com",
+                "senha": "",
+                "permissao": 2,
+                "periodo": 8
+            },
+            "Secretária": {
+                "nome": "",
+                "email": "usuario@email.com",
+                "senha": "",
+                "permissao": 3,
+                "periodo": 8
+            },
+            "Suplente": [
+                {
+                    "nome": "",
+                    "email": "usuario@email.com",
+                    "senha": "",
+                    "permissao": 4,
+                    "periodo": 8
+                },
+                {
+                    "nome": "",
+                    "email": "usuario@email.com",
+                    "senha": "",
+                    "permissao": 4,
+                    "periodo": 8
+                },
+                {
+                    "nome": "",
+                    "email": "usuario@email.com",
+                    "senha": "",
+                    "permissao": 4,
+                    "periodo": 8
+                }
+            ]
+        },
+        "admin": [
+            {
+                "nome": "",
+                "email": "usuario@email.com",
+                "senha": "",
+                "permissao": 77,
+                "periodo": 8
+            },
+            {
+                "nome": "",
+                "email": "usuario@email.com",
+                "senha": "",
+                "permissao": 77,
+                "periodo": 8
+            }
+        ]
+    }
+}
