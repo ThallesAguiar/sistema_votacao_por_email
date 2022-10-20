@@ -6,7 +6,7 @@ require_once(dirname(__DIR__) . "/vendor/autoload.php");
 
 class Email
 {
-    private $remetente = 'eleicoes@unifebe.edu.br';
+    private $remetente = 'eleicoes@email.com';
     private $destinatario;
     private $assunto;
     private $corpo_mensagem;
@@ -155,26 +155,23 @@ class Email
     {
 
         $mail = new PHPMailer();
-        $mail->SMTPDebug = 0;
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true;
-        $mail->SMTPAutoTLS = true;
-        $mail->Host = "email-smtp.us-east-1.amazonaws.com";
-        $mail->Port = 587;
-        $mail->CharSet = "UTF-8";
-        $mail->Username = "AKIAY77ENGGR4TEK4TEK";
-        $mail->Password = "BInUxc2DS+ycURaytWZUhgCapznGIsP4E0D8ELnmXKPT";
 
-        $mail->setFrom('eleicoes@unifebe.edu.br', 'ELEIÇÕES ' . date("Y"));
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'user@example.com';                     //SMTP username
+        $mail->Password   = 'secret';                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
+
+        $mail->setFrom('eleicoes@email.com', 'ELEIÇÕES ' . date("Y"));
         $mail->addAddress($email->getDestinatario(), 'Eleitor');
-
-        $mail->addBCC('eleicoes@unifebe.edu.br', "Eleições " . date("Y"));
-
+        $mail->addBCC('eleicoes@email.com', "Eleições " . date("Y"));
         $mail->isHTML(true);
-
         $mail->Subject = $email->getAssunto();
-
         $mail->Body = $email->getCorpo_mensagem();
 
 
@@ -202,6 +199,5 @@ class Email
         }
 
         return mysqli_fetch_assoc($query);
-
     }
 }
