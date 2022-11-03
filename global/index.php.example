@@ -1,7 +1,7 @@
 <?php
 define("PRODUCAO", true);
 
-$url = "https://www7.unifebe.edu.br/votacao/back";
+$url = "https://www.producao/votacao/back";
 
 if(PRODUCAO === false){
     $url = "http://localhost/votacao/back";
